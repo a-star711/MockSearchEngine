@@ -1,11 +1,11 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import AutoComplete from '../AutoComplete/AutoComplete';
-import { HistoryItem, Suggestion } from '../../types';
-import { DebounceInput } from 'react-debounce-input';
-import CleanIcon from '../ui/Icons/CleanIcon';
-import SearchIcon from '../ui/Icons/SearchIcon';
-import useOnClickOutside from '../../hooks/useOnclickOutside';
-import styles from './SearchBar.module.css';
+import { useEffect, useMemo, useRef, useState } from "react";
+import AutoComplete from "../AutoComplete/AutoComplete";
+import { HistoryItem, Suggestion } from "../../types";
+import { DebounceInput } from "react-debounce-input";
+import CleanIcon from "../ui/Icons/CleanIcon";
+import SearchIcon from "../ui/Icons/SearchIcon";
+import useOnClickOutside from "../../hooks/useOnclickOutside";
+import styles from "./SearchBar.module.css";
 
 interface SearchBarProps {
   query: string;
@@ -51,7 +51,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       if (selectedSuggestionIndex !== null && selectedSuggestionIndex >= 0) {
         onSearch(suggestions[selectedSuggestionIndex].title);
       } else {
@@ -64,7 +64,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'ArrowDown') {
+    if (e.key === "ArrowDown") {
       e.preventDefault();
       setSelectedSuggestionIndex((prevIndex) =>
         prevIndex === null || prevIndex === suggestions.length - 1
@@ -73,7 +73,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
       );
     }
 
-    if (e.key === 'ArrowUp') {
+    if (e.key === "ArrowUp") {
       e.preventDefault();
       setSelectedSuggestionIndex((prevIndex) =>
         prevIndex === null || prevIndex === 0
@@ -91,12 +91,12 @@ const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   const handleClean = () => {
-    onChange('');
+    onChange("");
   };
 
   return (
     <div className={styles.searchBarWrapper}>
-      <h1 className={styles.title}>SearchX</h1>
+      <h1 className={styles.title}>Searchy</h1>
       <div className={styles.searchBar}>
         <SearchIcon styles={styles.searchIcon} />
         <DebounceInput
@@ -104,13 +104,13 @@ const SearchBar: React.FC<SearchBarProps> = ({
             isDropdownVisible && styles.searchInputWithValue
           }`}
           inputRef={inputRef}
-          type='text'
+          type="text"
           value={query}
           debounceTimeout={300}
           onChange={handleInputChange}
           onKeyPress={handleKeyPress}
           onKeyDown={handleKeyDown}
-          placeholder='Search...'
+          placeholder="Search..."
         />
         <CleanIcon handleClean={handleClean} styles={styles.cleanIcon} />
       </div>
