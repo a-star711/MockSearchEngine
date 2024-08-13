@@ -1,0 +1,59 @@
+.searchBarWrapper {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+.title {
+  margin-bottom: 25px;
+  color: #424242;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  font-size: 16px;
+  border-radius: 25px;
+  border: 1px solid rgb(194, 194, 194);
+  outline: none;
+}
+
+.searchInputWithValue {
+  border-radius: 25px 25px 0 0;
+}
+
+.searchIcon {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 15px;
+  color: gray;
+  cursor: pointer;
+}
+
+.cleanIcon {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  transform: translateY(-50%);
+  top: 50%;
+  right: 15px;
+  color: gray;
+  cursor: pointer;
+}
